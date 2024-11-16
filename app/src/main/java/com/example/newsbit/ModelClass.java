@@ -2,15 +2,15 @@ package com.example.newsbit;
 
 public class ModelClass {
 
-    public String author,title,description,url,urltoimage,publishedat;
+    private String author,title,description,url,urlToImage,publishedAt;
 
-    public ModelClass(String author, String title, String description, String url, String urltoimage, String publishedat) {
+    public ModelClass(String author, String title, String description, String url, String urlToImage, String publishedAt) {
         this.author = author;
         this.title = title;
         this.description = description;
         this.url = url;
-        this.urltoimage = urltoimage;
-        this.publishedat = publishedat;
+        this.urlToImage = urlToImage;
+        this.publishedAt = publishedAt;
     }
 
     public String getAuthor() {
@@ -45,20 +45,20 @@ public class ModelClass {
         this.url = url;
     }
 
-    public String getUrltoimage() {
-        return urltoimage;
+    public String getUrlToimage() {
+        return urlToImage;
     }
 
-    public void setUrltoimage(String urltoimage) {
-        this.urltoimage = urltoimage;
+    public void setUrltoimage(String urlToImage) {
+        this.urlToImage = urlToImage;
     }
 
     public String getPublishedat() {
-        return publishedat;
+        return publishedAt;
     }
 
     public void setPublishedat(String publishedat) {
-        this.publishedat = publishedat;
+        this.publishedAt = publishedAt;
     }
 
     public byte[] getUrlToImage() {

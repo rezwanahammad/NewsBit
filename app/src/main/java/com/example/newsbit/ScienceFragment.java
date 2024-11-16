@@ -24,6 +24,7 @@ public class ScienceFragment extends Fragment {
     Adapter adapter;
     String country="us";
     private RecyclerView recyclerViewofscience;
+    private String category="science";
 
 
     @Nullable
@@ -60,5 +61,5 @@ public class ScienceFragment extends Fragment {
 
             }
         });
-}
+        }
     }

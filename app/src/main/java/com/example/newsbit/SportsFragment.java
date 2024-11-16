@@ -25,6 +25,7 @@ public class SportsFragment extends Fragment {
     Adapter adapter;
     String country="us";
     private RecyclerView recyclerViewofsports;
+    private String category="sports";
 
 
     @Nullable

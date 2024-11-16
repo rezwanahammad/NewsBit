@@ -23,6 +23,7 @@ public class HomeFragment extends Fragment {
     ArrayList<ModelClass>modelClassArrayList;
     Adapter adapter;
     String country="us";
+    private RecyclerView recyclerViewofhome;
 
 
     @Nullable
@@ -30,7 +31,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         @SuppressLint("InflateParams") View v=inflater.inflate(R.layout.homefragment,null);
 
-        RecyclerView recyclerViewofhome = v.findViewById(R.id.recyclerviewofhome);
+        recyclerViewofhome = v.findViewById(R.id.recyclerviewofhome);
         modelClassArrayList=new ArrayList<>();
         recyclerViewofhome.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter=new Adapter(getContext(),modelClassArrayList);

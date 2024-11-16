@@ -34,10 +34,8 @@ public class MainActivity extends AppCompatActivity {
         mscience=findViewById(R.id.science);
         msports=findViewById(R.id.sports);
         mtech=findViewById(R.id.technology);
-
         mentertainment=findViewById(R.id.entertainment);
         mhealth=findViewById(R.id.health);
-
         ViewPager viewPager=findViewById(R.id.fragmentcontainer);
         tabLayout=findViewById(R.id.include);
 
