@@ -102,13 +102,10 @@
         android:id="@+id/fragmentcontainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/include"
         android:contentDescription="Swipe left or right to navigate through tabs">
 
     </androidx.viewpager.widget.ViewPager>
-
-
-
-
 
 
 </RelativeLayout>
