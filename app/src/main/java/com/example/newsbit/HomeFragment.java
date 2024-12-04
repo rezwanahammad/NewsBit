@@ -2,6 +2,7 @@ package com.example.newsbit;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,7 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams") View v=inflater.inflate(R.layout.homefragment,null);
+        View v=inflater.inflate(R.layout.homefragment,null);
 
         recyclerViewofhome = v.findViewById(R.id.recyclerviewofhome);
         modelClassArrayList=new ArrayList<>();
@@ -41,23 +42,25 @@ public class HomeFragment extends Fragment {
 
         return v;
     }
-
+        //this function fetch the all news
     private void findNews() {
 
         ApiUtilities.getApiInterface().getNews(country,100,api).enqueue(new Callback<MainNews>() {
-            @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
+            public void onResponse( Call<MainNews> call, Response<MainNews> response) {
                 if(response.isSuccessful())
                 {
-                    assert response.body() != null;
                     modelClassArrayList.addAll(response.body().getArticles());
                     adapter.notifyDataSetChanged();
+                }
+                else{
+                    Log.e("API_ERROR","Response not successful.HTTP status code: "+response.code() +"and message: "+response.message());
                 }
             }
 
             @Override
-            public void onFailure(@NonNull Call<MainNews> call, @NonNull Throwable t) {
+            public void onFailure( Call<MainNews> call, Throwable t) {
+                Log.e("API_ERROR","Call failed: "+t.getMessage() );
 
             }
         });

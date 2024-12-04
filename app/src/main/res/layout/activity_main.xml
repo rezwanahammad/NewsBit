@@ -13,27 +13,51 @@
         android:layout_marginTop="0dp"
         android:background="@color/white"
         android:id="@+id/toolbar">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            >
+            android:gravity="center_vertical">
+
+            <!-- Power button aligned to the right -->
+
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="15dp"
                 android:text="@string/news_feed"
-                android:textStyle="bold"
-                android:textSize="20sp"
                 android:textColor="#03A9F4"
-                >
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            </TextView>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/logout"
+                android:layout_width="55dp"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/power"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="src_over"
+                android:text="."
+                android:textColor="#00FFFFFF"
+                app:icon="@android:drawable/ic_lock_power_off" />
 
         </RelativeLayout>
 
-
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- TabLayout below the Toolbar -->
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -47,65 +71,52 @@
         app:tabMode="scrollable"
         android:backgroundTint="@color/white">
 
+        <!-- Tabs for different categories -->
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home"
-            android:id="@+id/home">
-
-        </com.google.android.material.tabs.TabItem>
+            android:id="@+id/home" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sports"
-            android:id="@+id/sports">
-
-        </com.google.android.material.tabs.TabItem>
+            android:id="@+id/sports" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Health"
-            android:id="@+id/health">
-
-        </com.google.android.material.tabs.TabItem>
+            android:id="@+id/health" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Science"
-            android:id="@+id/science">
-
-        </com.google.android.material.tabs.TabItem>
+            android:id="@+id/science" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Entertainment"
-            android:id="@+id/entertainment">
-
-        </com.google.android.material.tabs.TabItem>
+            android:id="@+id/entertainment" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Technology"
-            android:id="@+id/technology">
-
-        </com.google.android.material.tabs.TabItem>
-
+            android:id="@+id/technology" />
 
     </com.google.android.material.tabs.TabLayout>
 
+    <!-- ViewPager for fragment container -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/fragmentcontainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="850dp"
         android:layout_below="@id/include"
-        android:contentDescription="Swipe left or right to navigate through tabs">
-
-    </androidx.viewpager.widget.ViewPager>
-
+        android:layout_marginTop="0dp"
+        android:contentDescription="Swipe left or right to navigate through tabs" />
 
 </RelativeLayout>

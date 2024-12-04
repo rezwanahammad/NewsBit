@@ -45,4 +45,15 @@
     </string>
     <string name="news_feed">News Feed</string>
     <string name="specific_news">Specific News</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="Password">Password</string>
+    <string name="Email">Email</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Click to Login</string>
+    <string name="click_to_register">Click to Register</string>
+    <string name="logout">LogOut</string>
+    <string name="login_click">Click to login</string>
+    <string name="register_click">Click to register</string>
 </resources>

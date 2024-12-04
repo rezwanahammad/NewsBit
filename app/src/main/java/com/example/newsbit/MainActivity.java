@@ -1,6 +1,10 @@
 package com.example.newsbit;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +13,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
     PagerAdapter pagerAdapter;
     Toolbar mtoolbar;
 
+    FirebaseAuth auth;
+    Button button;
+    FirebaseUser user;
+
+
+
     String api="1986db20cc1b4dd583ac779156575885";
 
     @Override
@@ -29,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         mtoolbar=findViewById(R.id.toolbar);
         setSupportActionBar(mtoolbar);
+
+        auth=FirebaseAuth.getInstance();
+        button=findViewById(R.id.logout);
+        user=auth.getCurrentUser();
 
         mhome=findViewById(R.id.home);
         mscience=findViewById(R.id.science);
@@ -64,39 +80,23 @@ public class MainActivity extends AppCompatActivity {
         });
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-
-
-    }
-}
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if(user==null)
+        {
+            Intent intent=new Intent(getApplicationContext(),Login.class);
+            startActivity(intent);
+            finish();
         }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent=new Intent(getApplicationContext(),Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-        return super.onOptionsItemSelected(item);
-    }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
+
     }
 }
-
- */

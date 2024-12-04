@@ -2,6 +2,7 @@ package com.example.newsbit;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,9 @@ public class ScienceFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams") View v=inflater.inflate(R.layout.sciencefragment,null);
+        View v=inflater.inflate(R.layout.sciencefragment,null);
+
+
         recyclerViewofscience=v.findViewById(R.id.recyclerviewofscience);
         modelClassArrayList=new ArrayList<>();
         recyclerViewofscience.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -43,23 +46,27 @@ public class ScienceFragment extends Fragment {
     }
 
     private void findNews() {
-
-        String category = "science";
-        ApiUtilities.getApiInterface().getCategoryNews(country, category,100,api).enqueue(new Callback<MainNews>() {
-            @SuppressLint("NotifyDataSetChanged")
+        ApiUtilities.getApiInterface().getCategoryNews(country, category, 100, api).enqueue(new Callback<MainNews>() {
             @Override
-            public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
-                if(response.isSuccessful())
-                {
-                    assert response.body() != null;
-                    modelClassArrayList.addAll(response.body().getArticles());
-                    adapter.notifyDataSetChanged();
+            public void onResponse( Call<MainNews> call, Response<MainNews> response) {
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        Log.d("API_RESPONSE", "Data: " + response.body().toString());
+                        modelClassArrayList.addAll(response.body().getArticles());
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        Log.e("API_ERROR", "Response body is null");
+                    }
+                } else {
+                    Log.e("API_ERROR", "Response was not successful, Code: " + response.code());
                 }
             }
+
             @Override
             public void onFailure(@NonNull Call<MainNews> call, @NonNull Throwable t) {
-
+                // Handle failure scenario (e.g., network issues)
+                Log.e("API_ERROR", "Request failed: " + t.getMessage());
             }
         });
-        }
+    }
     }

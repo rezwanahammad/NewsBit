@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/image_1"
+    tools:context=".Login">
+
+    <!-- Title Text -->
+    <TextView
+        android:text="@string/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="sans-serif-condensed"/>
+
+    <!-- Email Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:hintAnimationEnabled="false"
+        android:textColorHint="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:hint="@string/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="12dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        app:hintAnimationEnabled="false"
+        android:textColorHint="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:hint="@string/Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="12dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:indeterminateTint="@android:color/white"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:padding="12dp"
+        android:text="@string/login"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <!-- Register Text Link -->
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:id="@+id/registerNow"
+        android:text="@string/register_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

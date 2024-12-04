@@ -2,8 +2,14 @@ package com.example.newsbit;
 
 public class ModelClass {
 
-    private String author,title,description,url,urlToImage,publishedAt;
+    private String author;
+    private String title;
+    private String description;
+    private String url;
+    private String urlToImage;
+    private String publishedAt;
 
+    // Constructor
     public ModelClass(String author, String title, String description, String url, String urlToImage, String publishedAt) {
         this.author = author;
         this.title = title;
@@ -13,6 +19,7 @@ public class ModelClass {
         this.publishedAt = publishedAt;
     }
 
+    // Getter and Setter for Author
     public String getAuthor() {
         return author;
     }
@@ -21,6 +28,7 @@ public class ModelClass {
         this.author = author;
     }
 
+    // Getter and Setter for Title
     public String getTitle() {
         return title;
     }
@@ -29,6 +37,7 @@ public class ModelClass {
         this.title = title;
     }
 
+    // Getter and Setter for Description
     public String getDescription() {
         return description;
     }
@@ -37,6 +46,7 @@ public class ModelClass {
         this.description = description;
     }
 
+    // Getter and Setter for URL
     public String getUrl() {
         return url;
     }
@@ -45,23 +55,21 @@ public class ModelClass {
         this.url = url;
     }
 
-    public String getUrlToimage() {
+    // Getter and Setter for URL to Image
+    public String getUrlToImage() {
         return urlToImage;
     }
 
-    public void setUrltoimage(String urlToImage) {
+    public void setUrlToImage(String urlToImage) {
         this.urlToImage = urlToImage;
     }
 
-    public String getPublishedat() {
+    // Getter and Setter for Published Date
+    public String getPublishedAt() {
         return publishedAt;
     }
 
-    public void setPublishedat(String publishedat) {
+    public void setPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
-    }
-
-    public byte[] getUrlToImage() {
-        return null;
     }
 }

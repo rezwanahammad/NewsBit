@@ -31,7 +31,7 @@ public class SportsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        @SuppressLint("InflateParams") View v=inflater.inflate(R.layout.sportsfragment,null);
+         View v=inflater.inflate(R.layout.sportsfragment,null);
         recyclerViewofsports=v.findViewById(R.id.recyclerviewofsports);
         modelClassArrayList=new ArrayList<>();
         recyclerViewofsports.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -45,20 +45,17 @@ public class SportsFragment extends Fragment {
 
     private void findNews() {
 
-        String category = "sports";
         ApiUtilities.getApiInterface().getCategoryNews(country, category,100,api).enqueue(new Callback<MainNews>() {
-            @SuppressLint("NotifyDataSetChanged")
             @Override
-            public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
+            public void onResponse(Call<MainNews> call, Response<MainNews> response) {
                 if(response.isSuccessful())
                 {
-                    assert response.body() != null;
                     modelClassArrayList.addAll(response.body().getArticles());
                     adapter.notifyDataSetChanged();
                 }
             }
             @Override
-            public void onFailure(@NonNull Call<MainNews> call, @NonNull Throwable t) {
+            public void onFailure(Call<MainNews> call,Throwable t) {
 
             }
         });
