@@ -60,10 +60,12 @@ An Android application built with Java that aggregates and displays news article
     *   Allow Gradle to sync and download dependencies.
     *   Run the app on an emulator or a physical device.
 
-## Screenshots
+## Screenshots & Screenrecoder of the app
+
+https://github.com/user-attachments/assets/de8b3f4a-6e0e-4fa7-bf57-bcd1ab16f979
+
 
 *(Placeholder for screenshots of the app - e.g., Login screen, Main news feed, Category tabs)*
-
 ![p1](https://github.com/user-attachments/assets/45c90c33-d909-4c62-85d4-ed847182ca03)
 ![p2](https://github.com/user-attachments/assets/0ea9f242-9519-4467-affe-8533c4328be0)
 ![p3](https://github.com/user-attachments/assets/a9cdd5d0-e4e8-44c6-bddd-262f90bbfac3)
