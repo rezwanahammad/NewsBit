@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
         //this function fetch the all news
     private void findNews() {
 
-        ApiUtilities.getApiInterface().getNews(country,100,api).enqueue(new Callback<MainNews>() {
+        ApiUtilities.getApiInterface().getNews(country,2,api).enqueue(new Callback<MainNews>() {
             @Override
             public void onResponse( Call<MainNews> call, Response<MainNews> response) {
                 if(response.isSuccessful())
@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment {
                     adapter.notifyDataSetChanged();
                 }
                 else{
-                    Log.e("API_ERROR","Response not successful.HTTP status code: "+response.code() +"and message: "+response.message());
+                    Log.e("API_ERROR","Response not successful.HTTP status code: "+response.code());
                 }
             }
 

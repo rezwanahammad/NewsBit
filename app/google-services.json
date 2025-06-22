@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "283250605848",
+    "project_id": "newsbit2",
+    "storage_bucket": "newsbit2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283250605848:android:3161c3ba039fd823d1a86d",
+        "android_client_info": {
+          "package_name": "com.example.newsbit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQy8nm7nBFY-SUkCBKDoArCH3-or47qMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

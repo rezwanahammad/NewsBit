@@ -46,9 +46,9 @@ public class ScienceFragment extends Fragment {
     }
 
     private void findNews() {
-        ApiUtilities.getApiInterface().getCategoryNews(country, category, 100, api).enqueue(new Callback<MainNews>() {
+        ApiUtilities.getApiInterface().getCategoryNews(country, category, 2, api).enqueue(new Callback<MainNews>() {
             @Override
-            public void onResponse( Call<MainNews> call, Response<MainNews> response) {
+            public void onResponse(@NonNull Call<MainNews> call, @NonNull Response<MainNews> response) {
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
                         Log.d("API_RESPONSE", "Data: " + response.body().toString());
